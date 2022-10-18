@@ -1,0 +1,339 @@
+
+body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(0deg, #132039, #3393d3);
+  }
+
+
+  #Axolotl {
+    height: 200px;
+    width: 300px;
+    background: url(./sprites/axolotl.gif) left center;
+    animation: steps(1) infinite, swim 50s ease-in-out infinite;
+    position: absolute;
+    right: 1200px;
+    top: 50%;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #Axolotl.onClick {
+    height: 200px;
+    width: 300px;
+    background: url(./sprites/axolotl.gif) left center;
+    position: absolute;
+    right: 1200px;
+    top: 50%;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  
+
+  #ScalyFootGastopod {
+    height: 300px;
+    width: 300px;
+    background: url(./sprites/gastropod-scaly-foot.gif) left center;
+    animation: steps(1) infinite, crawl 90s ease-in-out infinite;
+    position: absolute;
+    bottom: 5px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #SeaTurtle {
+    height: 300px;
+    width: 300px;
+    background: url(./sprites/seaturtle.gif) left center;
+    animation: steps(1) infinite, swim 90s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #ThresherShark {
+    height: 300px;
+    width: 300px;
+    background: url(./sprites/shark-thresher.gif) left center;
+    animation: steps(1) infinite, swim 15s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #AnglerFish {
+    height: 300px;
+    width: 300px;
+    background: url(./sprites/fish-angler.gif) left center;
+    animation: steps(1) infinite, swim 15s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #RedCrab {
+    height: 300px;
+    width: 300px;
+    background: url(./sprites/crab-red.gif) left center;
+    animation: steps(1) infinite, swim 15s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #ParrotFish {
+    height: 300px;
+    width: 300px;
+    background: url(./sprites/fish-parrot.gif) left center;
+    animation: steps(1) infinite, swim 35s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 20%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #Whale {
+    height: 300px;
+    width: 300px;
+    background: url(./sprites/whale.gif) left center;
+    animation: steps(1) infinite, swim 15s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  
+  
+  @keyframes swim {
+    0% {
+      transform: translate(0, 0); /* Starting position */
+    }
+    20% {
+      transform: translate(calc(-50vw - 100px), 0); /* Animate to center of screen */
+    }
+    25% {
+      transform: translate(calc(-50vw - 100px), 0); /* Stay at the center for 1 second */
+    }
+    35% {
+      transform: translate(calc(-50vw - 100px), -20vh); /* Animate up for 2 seconds */
+    }
+    50% {
+      transform: translate(-25vw, 15vh); /* Animate bottom right for 3 seconds */
+    }
+    60% {
+      transform: translate(-25vw, -20vh); /* Animate up at right of the screen */
+    }
+    67% {
+      transform: translate(-25vw, -20vh);
+    }
+    80% {
+      transform: translate(calc(-50vw - 100px), 0); /* Animate past left past the screen */
+    }
+    100% {
+      transform: translate(0, 0); /* Animate past left past the screen */
+    }
+  }
+
+  @keyframes crawl {
+    0% {
+      transform: translate(-50vw, 20px); /* Starting position */
+    }
+    15% {
+        transform: translate(calc(0vw - 0px), 0); /* Animate past left past the screen */
+      }
+    35% {
+        transform: translate(calc(25vw - 5px), 0); /* Animate past left past the screen */
+      }
+    55% {
+        transform: translate(calc(50vw - 5px), 0); /* Animate past left past the screen */
+      }
+    85% {
+        transform: translate(calc(150vw - 5px), 0); /* Animate past left past the screen */
+      }
+    100% {
+        transform: translate(calc(250vw - 5px), 0); /* Animate past left past the screen */
+      }
+  }
+  
+
+  
+  .bubble {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: white;
+    bottom: -30px;
+    opacity: 0.2;
+    animation: bubble 15s ease-in-out infinite,
+      sideWays 4s ease-in-out infinite alternate;
+  }
+  
+  @keyframes bubble {
+    0% {
+      transform: translateY(0%);
+      opacity: 0.06;
+    }
+    100% {
+      transform: translateY(-120vh);
+    }
+  }
+  
+  @keyframes sideWays {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: 200px;
+    }
+  }
+  
+  .bubble--1 {
+    left: 10%;
+    animation-delay: 0.5s;
+    animation-duration: 16s;
+    opacity: 0.2;
+  }
+  
+  .bubble--2 {
+    width: 15px;
+    height: 15px;
+    left: 40%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+    opacity: 0.1;
+  }
+  
+  .bubble--3 {
+    width: 10px;
+    height: 10px;
+    left: 30%;
+    animation-delay: 5s;
+    animation-duration: 20s;
+    opacity: 0.3;
+  }
+  
+  .bubble--4 {
+    width: 25px;
+    height: 25px;
+    left: 40%;
+    animation-delay: 8s;
+    animation-duration: 17s;
+    opacity: 0.2;
+  }
+  
+  .bubble--5 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    animation-delay: 10s;
+    animation-duration: 15s;
+    opacity: 0.1;
+  }
+  
+  .bubble--6 {
+    width: 10px;
+    height: 10px;
+    left: 80%;
+    animation-delay: 3s;
+    animation-duration: 30s;
+    opacity: 0.4;
+  }
+  
+  .bubble--7 {
+    width: 15px;
+    height: 15px;
+    left: 90%;
+    animation-delay: -7s;
+    animation-duration: 25s;
+    opacity: 0.3;
+  }
+  
+  .bubble--9 {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    bottom: 30px;
+    animation-delay: -5s;
+    animation-duration: 19s;
+    opacity: 0.2;
+  }
+  
+  .bubble--10 {
+    width: 40px;
+    height: 40px;
+    left: 30%;
+    bottom: 30px;
+    animation-delay: -21s;
+    animation-duration: 16s;
+    opacity: 0.3;
+  }
+  
+  .bubble--11 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    bottom: 30px;
+    animation-delay: -13.75s;
+    animation-duration: 20s;
+    opacity: 0.3;
+  }
+  
+  .bubble--12 {
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    bottom: 30px;
+    animation-delay: -10.5s;
+    animation-duration: 19s;
+    opacity: 0.3;
+  }
+  

@@ -1,0 +1,83 @@
+{"users": [
+      {
+        "id": 1,
+        "admin": true,
+        "email": "renee@reneedoll.com"
+      },
+      {
+        "id": 2,
+        "admin": false,
+        "email": "red@redbull.com"
+      }
+    ],
+    "userFish": [
+      {
+        "id": 1,
+        "userID": 1,
+        "speciesID": 1,
+        "name": "Fishie"
+      },
+      {
+        "id": 2,
+        "userID": 1,
+        "speciesID": 2,
+        "name": "Footie"
+      },
+      {
+        "id": 3,
+        "userID": 1,
+        "speciesID": 3,
+        "name": "Poofy"
+      },
+      {
+        "id": 4,
+        "userID": 1,
+        "speciesID": 7,
+        "name": "Parroty"
+      }
+    ],
+    "fish": [
+      {
+        "id": 1,
+        "name": "Axolotl",
+        "species": "Axolotl",
+        "sprite": "./sprites/axolotl.gif"
+      },
+      {
+        "id": 2,
+        "name": "ScalyFootGastopod",
+        "species": "Scaly Foot Gastopod",
+        "sprite": "./sprites/gastropod-scaly-foot.gif"
+      },      {
+        "id": 3,
+        "name": "SeaTurtle",
+        "species": "Sea Turtle",
+        "sprite": "./sprites/seaturtle.gif"
+      },      {
+        "id": 4,
+        "name": "ThresherShark",
+        "species": "Thresher Shark",
+        "sprite": "./sprites/shark-thresher.gif"
+      },      {
+        "id": 5,
+        "name": "AnglerFish",
+        "species": "Angler Fish",
+        "sprite": "./sprites/fish-angler.gif"
+      },      {
+        "id": 6,
+        "name": "RedCrab",
+        "species": "Red Crab",
+        "sprite": "./sprites/crab-red.gif"
+      },      {
+        "id": 7,
+        "name": "ParrotFish",
+        "species": "Parrot Fish",
+        "sprite": "./sprites/fish-parrot.gif"
+      },      {
+        "id": 8,
+        "name": "Whale",
+        "species": "Whale",
+        "sprite": "./sprites/whale.gif"
+      }
+    ]
+  }

@@ -11,7 +11,7 @@ export const ApplicationViews = () => {
                 </>
             }>
 
-                <Route path="aquarium" element={ <FishList /> } />
+                <Route path="waterrarium" element={ <FishList /> } />
             </Route>
         </Routes>
     )

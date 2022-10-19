@@ -25,7 +25,7 @@ export const Register = (props) => {
                         admin: createdUser.admin
                     }))
 
-                    navigate("/")
+                    navigate("/login")
                 }
             })
     }

@@ -26,7 +26,7 @@ export const Login = () => {
                         admin: user.admin
                     }))
 
-                    navigate("/")
+                    navigate("/waterrarium")
                 }
                 else {
                     window.alert("Invalid login")
@@ -38,7 +38,7 @@ export const Login = () => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>404 Aquarium</h1>
+                    <h1>Waterrarium</h1>
                     <h2>Please sign in.</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>

@@ -42,12 +42,12 @@ export const NavBar = () => {
             <div className="navbar-header">
                 <FaBars className="navbar-icon"
                 onClick={handleToggler}/>
-                <h4 className="navbar-logo">Aquarium</h4>
+                <h4 className="navbar-logo">Waterrarium</h4>
                 </div>
                 <div className="navbar-items">
                     <div className="item">
-                        <Link to="/aquarium"><FaFish className="navbar-icon"/></Link>
-                        <Link className="navbar-text" to="/aquarium">My Aquarium</Link>
+                        <Link to="/waterrarium"><FaFish className="navbar-icon"/></Link>
+                        <Link className="navbar-text" to="/waterrarium">My Waterrarium</Link>
                     </div>
                     <div className="item">
                         <FaPlus className="navbar-icon"                

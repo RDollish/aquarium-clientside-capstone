@@ -15,7 +15,7 @@ export const FishList = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/userFish`)
+            fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish`)
             .then(response => response.json())
             .then((fishArray) => {
                 setFishJoin(fishArray)
@@ -27,7 +27,7 @@ export const FishList = () => {
     
     useEffect(
         () => {
-            fetch(`http://localhost:8088/fish`)
+            fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/fish`)
             .then(response => response.json())
             .then((fishArray) => {
                 setFishArray(fishArray)

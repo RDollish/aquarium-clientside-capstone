@@ -1,0 +1,9 @@
+name: aquarium-capstone
+static_sites:
+- name: site 
+  build_command: npm run build && mv build _static
+  github:
+    repo: RDollish/aquarium-clientside-capstone
+    branch: main
+    deploy_on_push: true
+  error_document: index.html

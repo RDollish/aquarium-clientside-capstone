@@ -60,6 +60,8 @@ export const NavBar = () => {
 
     const HandleAddModal = () => {
 
+        handleOpen()
+
         const onSelectHandle = (e) => {
             {localStorage.setItem("Fish_Name", JSON.stringify({
                 name: `${Input.value}`

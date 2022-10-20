@@ -49,14 +49,14 @@ export const FishList = () => {
     useEffect(
         () => {
             const myFish = []
-            userFish.map(fish => {             
-                let findFish = fishArray.find(fishy => fish.speciesID == fishy.id)
+            userFish?.map(fish => {             
+                let findFish = fishArray?.find(fishy => fish.speciesID == fishy.id)
                 myFish.push(findFish)})
 
              setFishTrue(myFish)
         }
         ,
-        [userFish] // When this array is empty, you are observing initial component state
+        [userFish, fishArray] // When this array is empty, you are observing initial component state
     )
 
     return <>
@@ -83,7 +83,7 @@ export const FishList = () => {
                     return <section className="fish">
                           <div onClick={() => 
                           {setUserClick(true)
-                            const matchFishie = userFish.find(
+                            const matchFishie = userFish?.find(
                             (fishie) => {
                                return fishie.speciesID == fish.id
                                     

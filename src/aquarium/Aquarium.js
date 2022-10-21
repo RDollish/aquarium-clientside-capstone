@@ -50,7 +50,7 @@ export const FishList = () => {
         () => {
             const myFish = []
             userFish?.map(fish => {             
-                let findFish = fishArray?.find(fishy => fish.speciesID == fishy.id)
+                let findFish = fishArray?.find(fishy => fish.fishID == fishy.id)
                 myFish.push(findFish)})
 
              setFishTrue(myFish)

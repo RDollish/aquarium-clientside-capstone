@@ -55,7 +55,7 @@ export const Register = (props) => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for 404 Aquarium</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register for Waterrarium</h1>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
                     <input onChange={updateuser}

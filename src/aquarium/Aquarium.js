@@ -85,7 +85,7 @@ export const FishList = () => {
                           {setUserClick(true)
                             const matchFishie = userFish?.find(
                             (fishie) => {
-                               return fishie.speciesID == fish.id
+                               return fishie.fishID == fish.id
                                     
                                 })
                                 alert(`${matchFishie.name} says hello!`)

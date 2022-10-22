@@ -5,7 +5,6 @@ import "./login.css"
 export const Register = (props) => {
     const [user, setUser] = useState({
         email: "",
-        admin: false
     })
     let navigate = useNavigate()
 
@@ -21,8 +20,7 @@ export const Register = (props) => {
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
                     localStorage.setItem("Aquarium_user", JSON.stringify({
-                        id: createdUser.id,
-                        admin: createdUser.admin
+                        id: createdUser.id
                     }))
 
                     navigate("/login")
@@ -53,6 +51,20 @@ export const Register = (props) => {
     }
 
     return (
+        <><div class="ocean">
+        <div class="bubble bubble--1"></div>
+        <div class="bubble bubble--2"></div>
+        <div class="bubble bubble--3"></div>
+        <div class="bubble bubble--4"></div>
+        <div class="bubble bubble--5"></div>
+        <div class="bubble bubble--6"></div>
+        <div class="bubble bubble--7"></div>
+        <div class="bubble bubble--8"></div>
+        <div class="bubble bubble--9"></div>
+        <div class="bubble bubble--10"></div>
+        <div class="bubble bubble--11"></div>
+        <div class="bubble bubble--12"></div>
+      </div>
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for Waterrarium</h1>
@@ -63,19 +75,10 @@ export const Register = (props) => {
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <input onChange={(evt) => {
-                        const copy = {...user}
-                        copy.isStaff = evt.target.checked
-                        setUser(copy)
-                    }}
-                        type="checkbox" id="isStaff" />
-                    <label htmlFor="email"> I am an employee </label>
-                </fieldset>
-                <fieldset>
                     <button type="submit"> Register </button>
                 </fieldset>
             </form>
-        </main>
+        </main></>
     )
 }
 

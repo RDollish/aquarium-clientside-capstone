@@ -85,11 +85,10 @@ cursor: pointer;
     z-index: 1; /* Sit on top */
     left: 35px;
     top: 85px;
-    width: 22%; /* Full width */
-    height: 35%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(59, 67, 91, 0.4); /* Black w/ opacity */
+    width: 25%; /* Full width */
+    height: 25%; /* Full height */
+    overflow: visible; /* Enable scroll if needed */
+
 
 }
 
@@ -98,10 +97,19 @@ cursor: pointer;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     position: relative; /* Stay in place */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    height: 50%;
+    width: 90%; /* Could be more or less, depending on screen size */
+    height: 80%;
 }
 .rs-modal-header {
     text-align: center;
+}
+
+.rs-icon {
+    display: none;
+}
+
+.rs-modal-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

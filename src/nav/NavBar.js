@@ -22,7 +22,7 @@ export const NavBar = () => {
 
     useEffect(
         () => {
-            setLoading(false)
+            if (loading === true)
             RegisterNewFish()
             },
         [loading] // When this array is empty, you are observing initial component state
@@ -163,14 +163,14 @@ export const NavBar = () => {
                             </div>
                         </Modal.Body>
                         <Modal.Footer>
+                            <Button onClick={add}
+                                appearance="primary">
+                                Add
+                            </Button>
                             <Button onClick={cancel} 
                             appearance="subtle">
                                 
                                 Cancel
-                            </Button>
-                            <Button onClick={add}
-                                appearance="primary">
-                                Add
                             </Button>
                         </Modal.Footer>
                     </Modal>

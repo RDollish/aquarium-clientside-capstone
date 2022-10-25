@@ -1,5 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom"
-import { FishList } from "../aquarium/Aquarium"
+import { Shop } from "../aquarium/shop/shop"
+import { TankView } from "./TankView"
 
 export const ApplicationViews = () => {
 	return (
@@ -11,7 +12,8 @@ export const ApplicationViews = () => {
                 </>
             }>
 
-                <Route path="home" element={ <FishList /> } />
+                <Route path="home" element={ <TankView /> } />
+                <Route path="shop" element={ <Shop /> } />
             </Route>
         </Routes>
     )

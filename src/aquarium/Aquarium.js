@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import "./Aquarium.css"
-import { Dialog, DialogTitle, DialogContent, Button, TextField, Box } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, Button, TextField } from '@mui/material';
+
 
 export const FishList = () => {
     const [fishJoin, setFishJoin] = useState([])
@@ -12,7 +12,6 @@ export const FishList = () => {
     const [name, setName] = useState([])
     const [clicked, setClicked] = React.useState([])
     const [showEdit, setShowEdit] = React.useState(false)
-    const navigate = useNavigate()
 
     const localAquariumUser = localStorage.getItem("Aquarium_user")
     const fishUserObject = JSON.parse(localAquariumUser)
@@ -43,7 +42,7 @@ export const FishList = () => {
 
     useEffect(
         () => {
-             const myFish = fishJoin.filter(fish => fish.userID == fishUserObject.id)
+             const myFish = fishJoin.filter(fish => parseInt(fish.userID) === fishUserObject.id)
              setUserFish(myFish)
         }
         ,
@@ -54,8 +53,8 @@ export const FishList = () => {
         () => {
             const myFish = []
             userFish?.map(fish => {             
-                let findFish = fishArray?.find(fishy => fish.fishID == fishy.id)
-                myFish.push(findFish)})
+                let findFish = fishArray?.find(fishy => parseInt(fish.fishID) === fishy.id)
+                return myFish.push(findFish)})
 
              setFishTrue(myFish)
         }
@@ -105,10 +104,13 @@ export const FishList = () => {
                 body: JSON.stringify(name)
             }
             return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish/${name.id}`, fetchOptions)
-            .then(response => response.json())  
-    }
-
-
+            .then(response => response.json())
+            .then(() => { return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish`)
+            .then(response => response.json())
+            .then((fishArray) => {
+                setFishJoin(fishArray)
+            })
+        })}
 
 
     const onChangeCaptureHandler = (e) => {
@@ -133,36 +135,38 @@ export const FishList = () => {
 
     return <>
 
-  <div class="ocean">
-  <div class="bubble bubble--1"></div>
-  <div class="bubble bubble--2"></div>
-  <div class="bubble bubble--3"></div>
-  <div class="bubble bubble--4"></div>
-  <div class="bubble bubble--5"></div>
-  <div class="bubble bubble--6"></div>
-  <div class="bubble bubble--7"></div>
-  <div class="bubble bubble--8"></div>
-  <div class="bubble bubble--9"></div>
-  <div class="bubble bubble--10"></div>
-  <div class="bubble bubble--11"></div>
-  <div class="bubble bubble--12"></div>
+  <div className="ocean">
+  <div className="bubble bubble--1"></div>
+  <div className="bubble bubble--2"></div>
+  <div className="bubble bubble--3"></div>
+  <div className="bubble bubble--4"></div>
+  <div className="bubble bubble--5"></div>
+  <div className="bubble bubble--6"></div>
+  <div className="bubble bubble--7"></div>
+  <div className="bubble bubble--8"></div>
+  <div className="bubble bubble--9"></div>
+  <div className="bubble bubble--10"></div>
+  <div className="bubble bubble--11"></div>
+  <div className="bubble bubble--12"></div>
 </div>
 
     <article className="fish">
         {
             userFishTrue?.map(
                 (fish) => {
-                    return <section className="fish">
+                    return <section className="fish"
+                    key={fish?.id}>
                           <div onClick={() => {
                         setUserClick(true)
                         if (showEdit === false) {
                         const matchFishie = userFish.find(
                             (fishie) => {
-                               return fishie.fishID == fish.id})
+                               return parseInt(fishie.fishID) === fish.id})
                         setClicked(matchFishie)
                           }
                           }}
-                         id={fish?.name}>  
+                         id={fish?.name}
+                         key={fish?.id}>  
                          <Dialog open={showEdit} onClose={cancel}>
         <DialogTitle><center>Edit Name: {clicked.name}</center></DialogTitle>
            <DialogContent>
@@ -185,6 +189,6 @@ export const FishList = () => {
                         </div>
                         </section>
                         })
-                    }
+}
                     </article></>
     }

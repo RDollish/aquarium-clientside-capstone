@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Aquarium.css"
+import { Dialog, DialogTitle, DialogContent, Button, TextField, Box } from '@mui/material';
 
 export const FishList = () => {
     const [fishJoin, setFishJoin] = useState([])
     const [fishArray, setFishArray] = useState([])
     const [userFish, setUserFish] = useState([])
     const [userFishTrue, setFishTrue] = useState([])
-    const [userClick, setUserClick] = useState([false])
+    const [userClick, setUserClick] = React.useState(false)
+    const [name, setName] = useState([])
+    const [clicked, setClicked] = React.useState([])
+    const [showEdit, setShowEdit] = React.useState(false)
     const navigate = useNavigate()
 
     const localAquariumUser = localStorage.getItem("Aquarium_user")
@@ -59,6 +63,74 @@ export const FishList = () => {
         [userFish, fishArray] // When this array is empty, you are observing initial component state
     )
 
+    useEffect(
+        () => {
+            if (userClick === true){
+            setShowEdit(true)
+                 
+        }}
+        ,
+        [userClick] // When this array is empty, you are observing initial component state
+    )
+
+    useEffect(
+        () => {
+            if (userClick === false){
+            setShowEdit(false)
+                 
+        }}
+        ,
+        [userClick] // When this array is empty, you are observing initial component state
+    )
+
+
+    useEffect(
+        () => {
+            if (showEdit === false){
+            setUserClick(false)
+                 
+        }}
+        ,
+        [showEdit] // When this array is empty, you are observing initial component state
+    )
+
+    
+
+    const editName = () => {
+                const fetchOptions = {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(name)
+            }
+            return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish/${name.id}`, fetchOptions)
+            .then(response => response.json())  
+    }
+
+
+
+
+    const onChangeCaptureHandler = (e) => {
+        setName({id: clicked.id,
+            name: e.target.value})
+    };
+
+    const cancel = () => {
+        setShowEdit(false)
+        setUserClick(false)
+        setClicked([])
+        
+    }
+
+    const edit = () => {
+        setShowEdit(false)
+        setUserClick(false)
+        editName()
+        }
+
+
+
     return <>
 
   <div class="ocean">
@@ -81,17 +153,38 @@ export const FishList = () => {
             userFishTrue?.map(
                 (fish) => {
                     return <section className="fish">
-                          <div onClick={() => 
-                          {setUserClick(true)
-                            const matchFishie = userFish?.find(
+                          <div onClick={() => {
+                        setUserClick(true)
+                        if (showEdit === false) {
+                        const matchFishie = userFish.find(
                             (fishie) => {
-                               return fishie.fishID == fish.id
-                                    
-                                })
-                                alert(`${matchFishie.name} says hello!`)
-                                }}
-                         id={fish?.name}></div>
+                               return fishie.fishID == fish.id})
+                        setClicked(matchFishie)
+                          }
+                          }}
+                         id={fish?.name}>  
+                         <Dialog open={showEdit} onClose={cancel}>
+        <DialogTitle><center>Edit Name: {clicked.name}</center></DialogTitle>
+           <DialogContent>
+            <TextField variant="standard"
+                label="Required"
+                defaultValue={clicked.name}
+                onChangeCapture={onChangeCaptureHandler}/>
+                <div>
+            </div>                        
+        <Button onClick={edit}
+        appearance="primary">
+        Change
+    </Button>
+    <Button onClick={cancel} 
+    appearance="subtle">
+        Close
+    </Button>
+    </DialogContent>
+</Dialog>                          
+                        </div>
                         </section>
-                        })}
-    </article></>
+                        })
+                    }
+                    </article></>
     }

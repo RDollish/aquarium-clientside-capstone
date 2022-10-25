@@ -4,7 +4,7 @@ body {
     overflow: hidden;
     position: static;
     width: 110vw;
-    height: 110vh;
+    height: 140vh;
     background-image: linear-gradient(0deg, #132039, #3393d3);
   }
 
@@ -60,7 +60,7 @@ body {
     height: 500px;
     width: 500px;
     background: url(./sprites/shark-thresher.gif) left center;
-    animation: steps(1) infinite, swim 35s ease-in-out infinite;
+    animation: steps(1) infinite, swim 30s ease-in-out infinite;
     position: absolute;
     right: 1400px;
     top: 10%;

@@ -9,6 +9,7 @@
     height: fit-content;
     background-color: #000000;
     color: #ffffff;
+    z-index: 101;
 }
 
 .navbar-icon {
@@ -77,39 +78,4 @@ cursor: pointer;
 .navbar.collapsed .navbar-text,
 .navbar.collapsed .navbar-logo {
     display: none;
-}
-
-.rs-modal {
-    display: none; /* Hidden by default */
-    position: relative; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 35px;
-    top: 85px;
-    width: 25%; /* Full width */
-    height: 25%; /* Full height */
-    overflow: visible; /* Enable scroll if needed */
-
-
-}
-
-.rs-modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    position: relative; /* Stay in place */
-    width: 90%; /* Could be more or less, depending on screen size */
-    height: 80%;
-}
-.rs-modal-header {
-    text-align: center;
-}
-
-.rs-icon {
-    display: none;
-}
-
-.rs-modal-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }

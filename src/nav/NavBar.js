@@ -2,11 +2,8 @@ import { Link, useNavigate } from "react-router-dom"
 import React, { useState, useEffect } from 'react';
 import "./NavBar.css"
 import { FaBars, FaDrumstickBite, FaHeart, FaFish, FaSignOutAlt, FaPlus, FaStickyNote, FaEye, FaEdit } from 'react-icons/fa';
-import { Modal, Button } from 'rsuite';
-import { Input } from 'rsuite';
-import { Menu, MenuItem, MenuButton, MenuDivider } from '@szhsin/react-menu';
-import '@szhsin/react-menu/dist/index.css';
-import '@szhsin/react-menu/dist/transitions/slide.css';
+import { Dialog, DialogTitle, DialogContent, Button, TextField} from '@mui/material';
+
 
 
 
@@ -18,7 +15,10 @@ export const NavBar = () => {
     const [fish, setFish] = useState()
     const [name, setName] = useState()
     const [species, setSpecies] = useState()
+    const [deleted, setDeleted] = useState()
     const [loading, setLoading] = useState(false)
+    const [loadingAddModal, setLoadingAddModal] = useState(false)
+    const [loadingDeleteModal, setLoadingDeleteModal] = useState(false)
 
     useEffect(
         () => {
@@ -26,6 +26,24 @@ export const NavBar = () => {
             RegisterNewFish()
             },
         [loading] // When this array is empty, you are observing initial component state
+    )
+
+    useEffect(
+        () => {
+            if (loadingAddModal === true)
+            setShowAdd(true);
+            setLoadingAddModal(false)
+            },
+        [loadingAddModal] // When this array is empty, you are observing initial component state
+    )
+
+    useEffect(
+        () => {
+            if (loadingDeleteModal === true)
+            setShowDelete(true);
+            setLoadingDeleteModal(false)
+            },
+        [loadingDeleteModal] // When this array is empty, you are observing initial component state
     )
 
 
@@ -57,16 +75,18 @@ export const NavBar = () => {
         )
     }
 
-    const [show, setShow] = React.useState(false)
+    const [showAdd, setShowAdd] = React.useState(false)
+    const [showDelete, setShowDelete] = React.useState(false)
 
     // Function to open Modal
     const cancel = () => {
-        setShow(false);
+        setShowAdd(false);
+        setShowDelete(false);
         
     }
 
     const add = () => {
-        setShow(false);
+        setShowAdd(false);
         const localAquariumUser = localStorage.getItem("Aquarium_user")
         const fishUserObject = JSON.parse(localAquariumUser)
     
@@ -77,9 +97,14 @@ export const NavBar = () => {
         }
 
     // Function to close Modal
-    const open = () => {
-        setShow(true);
-    }
+    const openAdd = () => {
+        setShowDelete(false);
+        setLoadingAddModal(true);}
+
+    const openDelete = () => {
+        setShowAdd(false);
+        setLoadingDeleteModal(true);}
+    
 
  const RegisterNewFish = (props) => {
 
@@ -109,6 +134,20 @@ export const NavBar = () => {
         [] // When this array is empty, you are observing initial component state
     )
 
+    const [userFishArray, setuserFishArray] = useState([])
+    useEffect(
+        () => {
+            fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish`)
+                .then(response => response.json())
+                .then((userFishArray) => {
+                    setuserFishArray(userFishArray)
+                })
+        },
+        [] // When this array is empty, you are observing initial component state
+    )
+
+    const localAquariumUser = localStorage.getItem("Aquarium_user")
+    const fishUserObject = JSON.parse(localAquariumUser)
 
     const fishesArray = () => (
         fishArray.map(
@@ -122,6 +161,19 @@ export const NavBar = () => {
             }
         )
     )
+    
+    const userfishesArray = () => (
+        userFishArray.filter(fish => fish.userID === fishUserObject.id).map(filteredFish => {
+               return (
+                <><input type="radio" value={filteredFish.id} name="fishnames"
+                onChangeCapture={onChangeFishDeleter}
+                /> {filteredFish.name}</>
+
+                )
+
+        }
+        )
+    )
 
     
     const onChangeCaptureHandler = (e) => {
@@ -131,6 +183,19 @@ export const NavBar = () => {
     const onChangeFishHandler = (e) => {
         setSpecies(e.target.value)
     };
+
+    const onChangeFishDeleter = (e) => {
+        setDeleted(e.target.value)
+    };
+
+    const remove = () => {
+        return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish/${deleted}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+}
 
 
 
@@ -148,21 +213,19 @@ export const NavBar = () => {
                 </div>
                 <div className="item">
                     <FaPlus className="navbar-icon"
-                        onClick={open}
+                        onClick={openAdd}
                     />
-                    <Modal size='xs' backdrop={true} open={show} onClose={cancel}>
-                        <Modal.Header>
-                            <Modal.Title>Add Fish</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <Input size={"md"}
-                                placeholder="Fish Name"
+                    <Dialog open={showAdd} onClose={cancel}>
+                        <DialogTitle><center>Add Fish</center></DialogTitle>
+                            <DialogContent><TextField variant="standard"
+                                label="Required"
+                                defaultValue="Fish Name"
+                                aria-labelledby="parent-modal-title"
+                                aria-describedby="parent-modal-description"
                                 onChangeCapture={onChangeCaptureHandler}/>
                                 <div>
                                 {fishesArray()}
                             </div>
-                        </Modal.Body>
-                        <Modal.Footer>
                             <Button onClick={add}
                                 appearance="primary">
                                 Add
@@ -172,9 +235,9 @@ export const NavBar = () => {
                                 
                                 Cancel
                             </Button>
-                        </Modal.Footer>
-                    </Modal>
-                    <div className="navbar-text" onClick={open}>Add Fish
+                        </DialogContent>
+                    </Dialog>
+                    <div className="navbar-text" onClick={openAdd}>Add Fish
                     </div>
                 </div>
                 <div className="item">
@@ -199,11 +262,24 @@ export const NavBar = () => {
                 </div>
                 <div className="item">
                     <FaEdit className="navbar-icon"
-                        onClick={() =>
-                            localStorage.setItem("Current_State", JSON.stringify({
-                                state: "Edit",
-                                icon: "FaEdit"
-                            }))} />
+                        onClick={openDelete} />
+                        <Dialog open={showDelete} onClose={cancel}>
+                        <DialogTitle><center>Rehome Fish</center></DialogTitle>
+                        <DialogContent>
+                                <div>
+                                {userfishesArray()}
+                            </div>
+                            <Button onClick={remove}
+                              >
+                                Rehome
+                            </Button>
+                            <Button onClick={cancel} 
+                          >
+                                
+                                Cancel
+                            </Button>
+                            </DialogContent>
+                    </Dialog>
                     <div className="navbar-text">Edit/Delete Fish
                     </div>
                 </div>

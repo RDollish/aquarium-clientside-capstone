@@ -3,6 +3,7 @@ import "./Aquarium.css"
 import { Dialog, DialogTitle, DialogContent, Button, TextField } from '@mui/material';
 
 
+
 export const FishList = () => {
     const [fishJoin, setFishJoin] = useState([])
     const [fishArray, setFishArray] = useState([])
@@ -132,9 +133,8 @@ export const FishList = () => {
         }
 
 
-
     return <>
-
+<div className="aquarium">
   <div className="ocean">
   <div className="bubble bubble--1"></div>
   <div className="bubble bubble--2"></div>
@@ -166,6 +166,7 @@ export const FishList = () => {
                           }
                           }}
                          id={fish?.name}
+                         className={fish?.name}
                          key={fish?.id}>  
                          <Dialog open={showEdit} onClose={cancel}>
         <DialogTitle><center>Edit Name: {clicked.name}</center></DialogTitle>
@@ -190,5 +191,5 @@ export const FishList = () => {
                         </section>
                         })
 }
-                    </article></>
-    }
+                    </article></div></>
+}

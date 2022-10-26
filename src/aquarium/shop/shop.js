@@ -88,7 +88,7 @@ export const Shop = () => {
         setLoadingDeleteModal(true);}
     
 
- const RegisterNewFish = (props) => {
+ const RegisterNewFish = () => {
 
 
         const newFish = () => {
@@ -142,8 +142,8 @@ export const Shop = () => {
             (fish) => {
                 return (
                 
-                <><input type="radio" value={fish.id} key={fish.id} name='fishnames'
-                onChangeCapture={onChangeFishHandler}/> {fish.species}</>
+                <React.Fragment><input type="radio" value={fish.id} key={fish.id} name='fishnames'
+                onChangeCapture={onChangeFishHandler}/> {fish.species}</React.Fragment>
 
                 )
             }
@@ -153,9 +153,9 @@ export const Shop = () => {
     const userfishesArray = () => (
         userFishArray.filter(fish => fish.userID === fishUserObject.id).map(filteredFish => {
                return (
-                <><input type="radio" key={filteredFish.id} value={filteredFish.id} name="fishnames"
+                <React.Fragment><input type="radio" key={filteredFish.id} value={filteredFish.id} name="fishnames"
                 onChangeCapture={onChangeFishDeleter}
-                /> {filteredFish.name}</>
+                /> {filteredFish.name}</React.Fragment>
 
                 )
 
@@ -195,7 +195,8 @@ export const Shop = () => {
 
 
 
-    return <>
+    return <React.Fragment>
+    <div className="shop">
         <div className={isExpanded ? "navbar" : "navbar collapsed"}>
             <div className="navbar-header">
                 <FaBars className="navbar-icon"
@@ -204,8 +205,8 @@ export const Shop = () => {
             </div>
             <div className="navbar-items">
                 <div className="item">
-                    <Link to="/home"><FaFish className="navbar-icon" /></Link>
-                    <Link className="navbar-text" to="/home">Home</Link>
+                    <Link to="/"><FaFish className="navbar-icon" /></Link>
+                    <Link className="navbar-text" to="/">Home</Link>
                 </div>
                 <div className="item">
                     <FaPlus className="navbar-icon"
@@ -290,15 +291,13 @@ export const Shop = () => {
                {
                    fishArray?.map(
                        (fish) => {
-                           return <section className="fish"
-                           key={fish?.id}>
-                                 <div onClick={() => {
-                                 }
-                                 }
-                                id={fish?.name}
-                                key={fish?.id}> 
+                           return (
+                                 <div
+                                className="fish"
+                                key={fish?.id}
+                                id={fish?.name}> 
                                </div>
-                               </section>})
+                   )})
 }
-                               </article></>
+                               </article></div></React.Fragment>
             }

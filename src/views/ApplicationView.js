@@ -12,7 +12,7 @@ export const ApplicationViews = () => {
                 </>
             }>
 
-                <Route path="home" element={ <TankView /> } />
+                <Route path="" element={ <TankView /> } />
                 <Route path="shop" element={ <Shop /> } />
             </Route>
         </Routes>

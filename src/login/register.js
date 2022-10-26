@@ -51,19 +51,19 @@ export const Register = (props) => {
     }
 
     return (
-        <><div class="ocean">
-        <div class="bubble bubble--1"></div>
-        <div class="bubble bubble--2"></div>
-        <div class="bubble bubble--3"></div>
-        <div class="bubble bubble--4"></div>
-        <div class="bubble bubble--5"></div>
-        <div class="bubble bubble--6"></div>
-        <div class="bubble bubble--7"></div>
-        <div class="bubble bubble--8"></div>
-        <div class="bubble bubble--9"></div>
-        <div class="bubble bubble--10"></div>
-        <div class="bubble bubble--11"></div>
-        <div class="bubble bubble--12"></div>
+        <><div className="ocean">
+        <div className="bubble bubble--1"></div>
+        <div className="bubble bubble--2"></div>
+        <div className="bubble bubble--3"></div>
+        <div className="bubble bubble--4"></div>
+        <div className="bubble bubble--5"></div>
+        <div className="bubble bubble--6"></div>
+        <div className="bubble bubble--7"></div>
+        <div className="bubble bubble--8"></div>
+        <div className="bubble bubble--9"></div>
+        <div className="bubble bubble--10"></div>
+        <div className="bubble bubble--11"></div>
+        <div className="bubble bubble--12"></div>
       </div>
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>

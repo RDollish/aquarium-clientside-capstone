@@ -9,7 +9,7 @@ body {
   }
 
 
-  #Axolotl {
+.shop #Axolotl {
     height: 200px;
     width: 300px;
     background: url(../sprites/axolotl.gif) left center;
@@ -26,7 +26,7 @@ body {
 
   
 
-  #ScalyFootGastopod {
+.shop #ScalyFootGastopod {
     height: 300px;
     width: 300px;
     background: url(../sprites/gastropod-scaly-foot.gif) left center;
@@ -40,7 +40,7 @@ body {
     transform: scale(0.4);
   }
 
-  #SeaTurtle {
+.shop #SeaTurtle {
     height: 300px;
     width: 300px;
     background: url(../sprites/seaturtle.gif) left center;
@@ -56,7 +56,7 @@ body {
     transform: scale(0.4);
   }
 
-  #ThresherShark {
+.shop #ThresherShark {
     height: 500px;
     width: 500px;
     background: url(../sprites/shark-thresher.gif) left center;
@@ -72,7 +72,7 @@ body {
     transform: scale(0.4);
   }
 
-  #AnglerFish {
+.shop #AnglerFish {
     height: 500px;
     width: 500px;
     background: url(../sprites/fish-angler.gif) left center;
@@ -88,7 +88,7 @@ body {
     transform: scale(0.4);
   }
 
-  #RedCrab {
+.shop #RedCrab {
     height: 300px;
     width: 300px;
     background: url(../sprites/crab-red.gif) left center;
@@ -104,7 +104,7 @@ body {
     transform: scale(0.4);
   }
 
-  #ParrotFish {
+.shop #ParrotFish {
     height: 300px;
     width: 300px;
     background: url(../sprites/fish-parrot.gif) left center;
@@ -120,7 +120,7 @@ body {
     transform: scale(0.4);
   }
 
-  #Whale {
+.shop #Whale {
     height: 300px;
     width: 500px;
     background: url(../sprites/whale.gif) left center;

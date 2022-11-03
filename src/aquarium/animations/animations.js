@@ -24,7 +24,7 @@ import { Dialog, DialogTitle, DialogContent, Button, TextField } from '@mui/mate
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import useSound from 'use-sound';
-import openSound from '../soundfx/open.wav';
+import openSound from '../soundfx/huh.wav';
 import Bloop from '../soundfx/Bloop.wav';
 
 
@@ -355,8 +355,7 @@ return <>
                     else if (fish.mood === 'hungry'){
                     setMood("is really hungry!")
                     setAction("Feed")
-                    opensound()
-                }
+                    opensound()}
 
                       }
                       }}

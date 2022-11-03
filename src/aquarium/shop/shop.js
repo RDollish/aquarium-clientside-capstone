@@ -9,6 +9,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import useSound from 'use-sound';
+import Bloop from '../soundfx/Bloop.wav';
+import Blop from '../soundfx/Blop.wav';
 
 
 export const Shop = () => {
@@ -31,6 +34,8 @@ export const Shop = () => {
 
     const localAquariumUser = localStorage.getItem("Aquarium_user")
     const fishUserObject = JSON.parse(localAquariumUser)
+    const [successbloop] = useSound(Bloop)
+    const [failbloop] = useSound(Blop)
 
     const Alert = React.forwardRef(function Alert(props, ref) {
         return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -109,12 +114,14 @@ export const Shop = () => {
         },
             setLoading(true))
             setName()
-            setSpecies()}
+            setSpecies()
+        successbloop()}
             
             else{
                 setAddSnackFail(true)
                 setName()
                 setSpecies()
+                failbloop()
             }
     }
 
@@ -235,6 +242,7 @@ export const Shop = () => {
                 .then((userFishArray) => {
                     setuserFishArray(userFishArray)
                     setDeleteSnackSuccess(true)
+                    failbloop()
                 })
         })
 

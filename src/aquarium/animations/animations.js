@@ -23,6 +23,10 @@ import "./animations.css"
 import { Dialog, DialogTitle, DialogContent, Button, TextField } from '@mui/material';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import useSound from 'use-sound';
+import openSound from '../soundfx/open.wav';
+import Bloop from '../soundfx/Bloop.wav';
+
 
 
 export const FishGen = () => {
@@ -45,6 +49,9 @@ export const FishGen = () => {
 
     const localAquariumUser = localStorage.getItem("Aquarium_user")
     const fishUserObject = JSON.parse(localAquariumUser)
+
+    const [opensound] = useSound(openSound)
+    const [successbloop] = useSound(Bloop)
 
     const Alert = React.forwardRef(function Alert(props, ref) {
         return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -276,6 +283,7 @@ return () => clearInterval(interval)
         setShowEdit(false)
         setUserClick(false)
         editName()
+        successbloop()
         }
 
 
@@ -312,34 +320,43 @@ return <>
                     if (fish?.mood === 'none'){
                         setAction("Say Hi")
                         setMood("is doing okay today.")
+                        opensound()
                     }
                     else if (fish.mood === 'happy'){
                         setMood("is in a really great mood!")
                         setAction("Pet")
+                        opensound()
                     }
                     else if (fish.mood === 'sad'){
                         setMood("is feeling down today...")
                         setAction("Cheer Up")
+                        opensound()
                     }
                     else if (fish.mood === 'music'){
                         setMood("is really happy you're here!")
                         setAction("Wave")
+                        opensound()
                     }
                     else if (fish.mood === 'sleepy'){
                         setMood("is very sleepy.")
                         setAction("Wake Up")
+                        opensound()
                     }
                     else if (fish.mood === 'idle'){
                         setMood("is feeling dizzy!")
                         setAction("Stop Spinning")
+                        opensound()
                     }
                     else if (fish.mood === 'angry'){
                         setMood("is feeling grumpy today.")
                         setAction("Talk To")
+                        opensound()
                     }
                     else if (fish.mood === 'hungry'){
                     setMood("is really hungry!")
-                    setAction("Feed")}
+                    setAction("Feed")
+                    opensound()
+                }
 
                       }
                       }}

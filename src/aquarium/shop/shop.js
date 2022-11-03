@@ -270,8 +270,8 @@ export const Shop = () => {
                         <Dialog open={showAdd} onClose={cancel}>
                             <DialogTitle><center>Add Fish</center></DialogTitle>
                             <DialogContent><TextField variant="standard"
-                                label="Required"
-                                defaultValue="Fish Name"
+                                label="Name"
+                                multiline
                                 aria-labelledby="parent-modal-title"
                                 aria-describedby="parent-modal-description"
                                 onChangeCapture={onChangeCaptureHandler} />

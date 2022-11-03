@@ -1,0 +1,586 @@
+
+
+#Axolotl {
+    height: 350px;
+    width: 300px;
+    background: url(../sprites/axolotl.gif) bottom no-repeat;
+    animation: steps(1) infinite, swim 50s ease-in-out infinite;
+    position: absolute;
+    right: 1200px;
+    top: 50%;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #Axolotl.idle {
+    animation: rotate 5s linear infinite;
+    background: url(../sprites/axolotl.gif) bottom no-repeat ,url(../mood/idle2.gif) top no-repeat;
+  }
+
+  #Axolotl.happy {
+    background: url(../sprites/axolotl.gif) bottom no-repeat ,url(../mood/happy.gif) top no-repeat;
+  }
+
+  #Axolotl.hungry {
+    background: url(../sprites/axolotl.gif) bottom no-repeat ,url(../mood/hungry.gif) top no-repeat;
+  }
+
+  #Axolotl.angry {
+    background: url(../sprites/axolotl.gif) bottom no-repeat ,url(../mood/angry.gif) top no-repeat;
+  }
+  #Axolotl.sleepy {
+    background: url(../sprites/axolotl.gif) bottom no-repeat ,url(../mood/sleepy.gif) top no-repeat;
+    animation: sleepy 20s linear infinite;
+  }
+  #Axolotl.sad {
+    background: url(../sprites/axolotl.gif) bottom no-repeat ,url(../mood/sad.gif) top no-repeat;
+    animation: steps(1) infinite, swim 90s ease-in-out infinite;
+  }
+  #Axolotl.music {
+    background: url(../sprites/axolotl.gif) bottom no-repeat ,url(../mood/music.gif) top no-repeat;
+  }
+
+
+  
+
+  #ScalyFootGastopod {
+    height: 450px;
+    width: 300px;
+    background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat;
+    animation: steps(1) infinite, crawl 90s ease-in-out infinite;
+    position: absolute;
+    bottom: -75px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #ScalyFootGastopod.idle {
+    background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+    animation: crawlidle 30s linear infinite;
+  }
+
+  #ScalyFootGastopod.happy {
+    background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+  }
+
+  #ScalyFootGastopod.hungry {
+    background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+    position: absolute;
+}
+
+#ScalyFootGastopod.angry {
+    background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#ScalyFootGastopod.sleepy {
+  background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+}
+#ScalyFootGastopod.sad {
+  background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+  animation: steps(1) infinite, crawl 120s ease-in-out infinite;
+}
+#ScalyFootGastopod.music {
+  background: url(../sprites/gastropod-scaly-foot.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+  #SeaTurtle {
+    height: 450px;
+    width: 300px;
+    background: url(../sprites/seaturtle.gif) left center no-repeat;
+    animation: steps(1) infinite, swim 90s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #SeaTurtle.idle {
+    background: url(../sprites/seaturtle.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+    animation: rotate 5s linear infinite;
+  }
+
+  #SeaTurtle.happy {
+    background: url(../sprites/seaturtle.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+  }
+
+  #SeaTurtle.hungry {
+    background: url(../sprites/seaturtle.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+
+}
+
+#SeaTurtle.angry {
+    background: url(../sprites/seaturtle.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#SeaTurtle.sleepy {
+  background: url(../sprites/seaturtle.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+  animation: sleepy 20s linear infinite;
+}
+#SeaTurtle.sad {
+  background: url(../sprites/seaturtle.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+  animation: steps(1) infinite, swim 120s ease-in-out infinite;
+}
+#SeaTurtle.music {
+  background: url(../sprites/seaturtle.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+  #ThresherShark {
+    height: 500px;
+    width: 500px;
+    background: url(../sprites/shark-thresher.gif) left center no-repeat;
+    animation: steps(1) infinite, swim 30s ease-in-out infinite;
+    position: absolute;
+    right: 1400px;
+    top: 10%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #ThresherShark.idle {
+    background: url(../sprites/shark-thresher.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+    animation: rotate 5s linear infinite;
+
+  }
+
+  #ThresherShark.happy {
+    background: url(../sprites/shark-thresher.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+  }
+
+  #ThresherShark.hungry {
+    background: url(../sprites/shark-thresher.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+    position: fixed;
+}
+
+#ThresherShark.angry {
+    background: url(../sprites/shark-thresher.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#ThresherShark.sleepy {
+  background: url(../sprites/shark-thresher.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+  animation: sleepy 20s linear infinite;
+}
+#ThresherShark.sad {
+  background: url(../sprites/shark-thresher.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+  animation: steps(1) infinite, swim 50s ease-in-out infinite;
+}
+#ThresherShark.music {
+  background: url(../sprites/shark-thresher.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+  #AnglerFish {
+    height: 600px;
+    width: 500px;
+    background: url(../sprites/fish-angler.gif) left center no-repeat;
+    animation: steps(1) infinite, swim 25s ease-in-out infinite;
+    position: absolute;
+    right: 350px;
+    top: 65%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.3;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #AnglerFish.idle {
+    background: url(../sprites/fish-angler.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+    animation: rotate 5s linear infinite;
+  }
+
+  #AnglerFish.happy {
+    background: url(../sprites/fish-angler.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+  }
+
+  #AnglerFish.hungry {
+    background: url(../sprites/fish-angler.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+}
+
+#AnglerFish.angry {
+    background: url(../sprites/fish-angler.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+
+#AnglerFish.sleepy {
+  background: url(../sprites/fish-angler.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+  animation: sleepy 20s linear infinite;
+}
+
+#AnglerFish.sad {
+  background: url(../sprites/fish-angler.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+  animation: steps(1) infinite, swim 45s ease-in-out infinite;
+}
+#AnglerFish.music {
+  background: url(../sprites/fish-angler.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+  
+
+  #RedCrab {
+    height: 380px;
+    width: 300px;
+    background: url(../sprites/red-crab.gif) left center no-repeat;
+    animation: steps(1) infinite, crabcrawl 35s ease-in-out infinite;
+    position: absolute;
+    bottom: -70px;
+    z-index: 99;
+    font-size: 30px;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #RedCrab.idle {
+    background: url(../sprites/red-crab.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+    animation: crabcrawlidle 25s linear infinite;
+  }
+
+  #RedCrab.happy {
+    background: url(../sprites/red-crab.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+  }
+
+  #RedCrab.hungry {
+    background: url(../sprites/red-crab.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+    position: fixed;
+}
+
+#RedCrab.angry {
+    background: url(../sprites/red-crab.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#RedCrab.sleepy {
+  background: url(../sprites/red-crab.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+}
+#RedCrab.sad {
+  background: url(../sprites/red-crab.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+  animation: steps(1) infinite, crabcrawl 55s ease-in-out infinite;
+}
+#RedCrab.music {
+  background: url(../sprites/red-crab.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+  #ParrotFish {
+    height: 400px;
+    width: 300px;
+    background: url(../sprites/fish-parrot.gif) left center no-repeat;
+    animation: steps(1) infinite, swim 35s ease-in-out infinite;
+    position: absolute;
+    right: 100px;
+    top: 20%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #ParrotFish.idle {
+    background: url(../sprites/fish-parrot.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+    animation: rotate 5s linear infinite;
+
+  }
+
+  #ParrotFish.happy {
+    background: url(../sprites/fish-parrot.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+  }
+
+  #ParrotFish.hungry {
+    background: url(../sprites/fish-parrot.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+}
+
+#ParrotFish.angry {
+    background: url(../sprites/fish-parrot.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#ParrotFish.sleepy {
+  background: url(../sprites/fish-parrot.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+  animation: sleepy 20s linear infinite;
+}
+#ParrotFish.sad {
+  background: url(../sprites/fish-parrot.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+  animation: steps(1) infinite, swim 55s ease-in-out infinite;
+}
+#ParrotFish.music {
+  background: url(../sprites/fish-parrot.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+  #Whale {
+    height: 350px;
+    width: 500px;
+    background: url(../sprites/whale.gif) left center no-repeat;
+    animation: steps(1) infinite, swim 75s ease-in-out infinite;
+    position: absolute;
+    right: 1900px;
+    top: 60%;
+    margin-top: 100px;
+    z-index: 100;
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+
+  #Whale.idle {
+    background: url(../sprites/whale.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+    animation: rotate 5s linear infinite;
+  }
+
+  #Whale.happy {
+    background: url(../sprites/whale.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+  }
+
+  #Whale.hungry {
+    background: url(../sprites/whale.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+}
+
+#Whale.angry {
+    background: url(../sprites/whale.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#Whale.sleepy {
+  background: url(../sprites/whale.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+  animation: steps(1) infinite, sleepy 20s ease-in-out infinite;
+}
+#Whale.sad {
+  background: url(../sprites/whale.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+  animation: steps(1) infinite, swim 100s ease-in-out infinite;
+}
+#Whale.music {
+  background: url(../sprites/whale.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+#Tuna {
+  height: 350px;
+  width: 500px;
+  background: url(../sprites/fish-tuna.gif) left center no-repeat;
+  animation: steps(1) infinite, swim 75s ease-in-out infinite;
+  position: absolute;
+  right: 1600px;
+  top: 80%;
+  margin-top: 100px;
+  z-index: 100;
+  zoom: 0.4;
+  -moz-transform: scale(0.4);
+  -webkit-transform: scale(0.4);
+  transform: scale(0.4);
+}
+
+#Tuna.idle {
+  background: url(../sprites/fish-tuna.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+  animation: rotate 5s linear infinite;
+}
+
+#Tuna.happy {
+  background: url(../sprites/fish-tuna.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+}
+
+#Tuna.hungry {
+  background: url(../sprites/fish-tuna.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+}
+
+#Tuna.angry {
+  background: url(../sprites/fish-tuna.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#Tuna.sleepy {
+background: url(../sprites/fish-tuna.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+animation: steps(1) infinite, sleepy 20s ease-in-out infinite;
+}
+#Tuna.sad {
+background: url(../sprites/fish-tuna.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+animation: steps(1) infinite, swim 100s ease-in-out infinite;
+}
+#Tuna.music {
+background: url(../sprites/fish-tuna.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+#AtlanticWolf {
+  height: 350px;
+  width: 500px;
+  background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat;
+  animation: steps(1) infinite, swim 75s ease-in-out infinite;
+  position: absolute;
+  right: 1200px;
+  top: 30%;
+  margin-top: 100px;
+  z-index: 100;
+  zoom: 0.4;
+  -moz-transform: scale(0.4);
+  -webkit-transform: scale(0.4);
+  transform: scale(0.4);
+}
+
+#AtlanticWolf.idle {
+  background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat, url(../mood/idle2.gif) top no-repeat;
+  animation: rotate 5s linear infinite;
+}
+
+#AtlanticWolf.happy {
+  background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat, url(../mood/happy.gif) top no-repeat;
+}
+
+#AtlanticWolf.hungry {
+  background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat, url(../mood/hungry.gif) top no-repeat;
+}
+
+#AtlanticWolf.angry {
+  background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat, url(../mood/angry.gif) top no-repeat;
+}
+#AtlanticWolf.sleepy {
+background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat, url(../mood/sleepy.gif) top no-repeat;
+animation: steps(1) infinite, sleepy 20s ease-in-out infinite;
+}
+#AtlanticWolf.sad {
+background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat, url(../mood/sad.gif) top no-repeat;
+animation: steps(1) infinite, swim 100s ease-in-out infinite;
+}
+#AtlanticWolf.music {
+background: url(../sprites/fish-atlanticWolf.gif) left center no-repeat, url(../mood/music.gif) top no-repeat;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+      }
+    
+      to {
+        transform: rotate(360deg);
+      }
+}  
+  
+  @keyframes swim {
+    0% {
+      transform: translate(0, 0); /* Starting position */
+    }
+    20% {
+      transform: translate(calc(-50vw - 100px), 0); /* Animate to center of screen */
+    }
+    25% {
+      transform: translate(calc(-50vw - 100px), 0); /* Stay at the center for 1 second */
+    }
+    35% {
+      transform: translate(calc(-50vw - 100px), -20vh); /* Animate up for 2 seconds */
+    }
+    50% {
+      transform: translate(-25vw, 15vh); /* Animate bottom right for 3 seconds */
+    }
+    60% {
+      transform: translate(-25vw, -20vh); /* Animate up at right of the screen */
+    }
+    67% {
+      transform: translate(-25vw, -20vh);
+    }
+    80% {
+      transform: translate(calc(-50vw - 100px), 0); /* Animate past left past the screen */
+    }
+    100% {
+      transform: translate(0, 0); /* Animate past left past the screen */
+    }
+  }
+
+  @keyframes sleepy {
+    0% {
+      transform: translate(0, 0); /* Starting position */
+    }
+    50% {
+      transform: translate(0vw, 20vh);
+    }
+    100% {
+      transform: translate(0, 0); 
+    }
+  }
+
+
+  @keyframes crawl {
+    0% {
+      transform: translate(-50vw, 20px); /* Starting position */
+    }
+    15% {
+        transform: translate(calc(0vw - 0px), 0); /* Animate past left past the screen */
+      }
+    35% {
+        transform: translate(calc(25vw - 5px), 0); /* Animate past left past the screen */
+      }
+    55% {
+        transform: translate(calc(50vw - 5px), 0); /* Animate past left past the screen */
+      }
+    85% {
+        transform: translate(calc(150vw - 5px), 0); /* Animate past left past the screen */
+      }
+    100% {
+        transform: translate(calc(250vw - 5px), 0); /* Animate past left past the screen */
+      }
+  }
+
+  @keyframes crawlidle {
+    0% {
+      transform: translate(-50vw, 20px) rotate(-360deg); /* Starting position */
+    }
+    15% {
+        transform: translate(calc(0vw - 0px), 0) rotate(0deg); /* Animate past left past the screen */
+      }
+    35% {
+        transform: translate(calc(25vw - 5px), 0) rotate(360deg); /* Animate past left past the screen */
+      }
+    55% {
+        transform: translate(calc(50vw - 5px), 0) rotate(720deg); /* Animate past left past the screen */
+      }
+    85% {
+        transform: translate(calc(150vw - 5px), 0) rotate(1080deg); /* Animate past left past the screen */
+      }
+    100% {
+        transform: translate(calc(250vw - 5px), 0) rotate(1440deg); /* Animate past left past the screen */
+      }
+  }
+  
+  
+  @keyframes crabcrawl {
+    0% {
+      transform: translate(250vw, 20px); /* Starting position */
+    }
+    15% {
+        transform: translate(calc(225vw - 5px), 0); /* Animate past left past the screen */
+      }
+    35% {
+        transform: translate(calc(215vw - 5px), 0); /* Animate past left past the screen */
+      }
+    55% {
+        transform: translate(calc(200vw - 5px), 0); /* Animate past left past the screen */
+      }
+    85% {
+        transform: translate(calc(215vw - 5px), 0); /* Animate past left past the screen */
+      }
+    100% {
+        transform: translate(calc(250vw - 5px), 0); /* Animate past left past the screen */
+      }
+  }
+
+  @keyframes crabcrawlidle {
+    0% {
+      transform: translate(250vw, 20px) rotate(-360deg); /* Starting position */
+    }
+    15% {
+        transform: translate(calc(225vw - 5px), 0) rotate(0deg); /* Animate past left past the screen */
+      }
+    35% {
+        transform: translate(calc(215vw - 5px), 0) rotate(360deg); /* Animate past left past the screen */
+      }
+    55% {
+        transform: translate(calc(200vw - 5px), 0) rotate(720deg); /* Animate past left past the screen */
+      }
+    85% {
+        transform: translate(calc(215vw - 5px), 0) rotate(360deg); /* Animate past left past the screen */
+      }
+    100% {
+        transform: translate(calc(250vw - 5px), 0) rotate(0deg); /* Animate past left past the screen */
+      }
+  }

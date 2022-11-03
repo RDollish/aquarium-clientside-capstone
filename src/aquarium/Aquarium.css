@@ -9,9 +9,9 @@ body {
   }
 
   #Axolotl {
-    height: 200px;
+    height: 350px;
     width: 300px;
-    background: url(./sprites/axolotl.gif) left center;
+    background: url(./mood/happy.gif) top no-repeat, url(./sprites/axolotl.gif) bottom no-repeat;
     animation: steps(1) infinite, swim 50s ease-in-out infinite;
     position: absolute;
     right: 1200px;
@@ -90,13 +90,12 @@ body {
   #RedCrab {
     height: 300px;
     width: 300px;
-    background: url(./sprites/crab-red.gif) left center;
+    background: url(./sprites/red-crab.gif) left center;
     animation: steps(1) infinite, crabcrawl 35s ease-in-out infinite;
     position: absolute;
     bottom: -25px;
     z-index: 99;
     font-size: 30px;
-    rotate: 180deg;
     zoom: 0.4;
     -moz-transform: scale(0.4);
     -webkit-transform: scale(0.4);
@@ -166,6 +165,8 @@ body {
       transform: translate(0, 0); /* Animate past left past the screen */
     }
   }
+
+  
 
   @keyframes crawl {
     0% {

@@ -27,6 +27,7 @@ export const Shop = () => {
     const [openAddSnackSuccess, setAddSnackSuccess] = React.useState(false);
     const [openAddSnackFail, setAddSnackFail] = React.useState(false);
     const [openDeleteSnackSuccess, setDeleteSnackSuccess] = React.useState(false);
+    const [openDeleteSnackFail, setDeleteSnackFail] = React.useState(false);
     const [loading, setLoading] = useState(false)
     const [loadingAddModal, setLoadingAddModal] = useState(false)
     const [loadingDeleteModal, setLoadingDeleteModal] = useState(false)
@@ -48,6 +49,7 @@ export const Shop = () => {
         setAddSnackSuccess(false);
         setDeleteSnackSuccess(false)
         setAddSnackFail(false)
+        setDeleteSnackFail(false)
     };
 
     useEffect(
@@ -98,6 +100,7 @@ export const Shop = () => {
         setShowDelete(false);
         setSpecies()
         setName()
+        setDeleted()
 
     }
 
@@ -159,6 +162,7 @@ export const Shop = () => {
         newFish()
         setAddSnackSuccess(true)
         setLoading(false)
+        fishesArray()
     }
 
     useEffect(
@@ -230,6 +234,7 @@ export const Shop = () => {
 
     const remove = () => {
         setShowDelete(false);
+        if (deleted) {
         return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish/${deleted}`, {
             method: "DELETE",
             headers: {
@@ -240,11 +245,16 @@ export const Shop = () => {
             return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish`)
                 .then(response => response.json())
                 .then((userFishArray) => {
+                    setDeleted()
                     setuserFishArray(userFishArray)
                     setDeleteSnackSuccess(true)
                     failbloop()
                 })
-        })
+        })}
+        else{
+            setDeleteSnackFail(true)
+            failbloop()
+        }
 
     }
 
@@ -313,6 +323,14 @@ export const Shop = () => {
                             onClose={handleClose}>
                             <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
                                 Could not add, missing name or species.
+                            </Alert>
+                        </Snackbar>
+                        <Snackbar
+                            open={openDeleteSnackFail}
+                            autoHideDuration={6000}
+                            onClose={handleClose}>
+                            <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                                Did not select a fish.
                             </Alert>
                         </Snackbar>
                         <div className="navbar-text" onClick={openAdd}>Add Fish

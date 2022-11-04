@@ -123,6 +123,7 @@ export const FishList = () => {
         setShowEdit(false)
         setUserClick(false)
         setClicked([])
+
         
     }
 

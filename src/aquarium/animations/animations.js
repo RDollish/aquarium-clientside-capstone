@@ -152,7 +152,7 @@ export const FishGen = () => {
 
     useEffect(
         () => {
-            if (counter === 30) {
+            if (counter === 180) {
             const myFish = []
             userFish?.map(fish => {          
                 let findFish = fishArray?.find(fishy => parseInt(fish.fishID) === fishy.id)

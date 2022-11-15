@@ -1,3 +1,8 @@
+
+
+  ![clientside-home](https://user-images.githubusercontent.com/110746023/202014243-3314f971-91c2-4961-a8ef-366976a0cba0.gif)
+  
+  
 # Waterrarium
 
 Waterrarium is a tamogatchi-like browser game where you own your own aquarium! Currently there are 10 species of fish in the application. Fish receive randomized moods that allow you to interact with them in different ways. Certain actions play sound effects, such as adding a fish or clicking one.

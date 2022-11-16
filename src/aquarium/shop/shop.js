@@ -57,7 +57,7 @@ export const Shop = () => {
             if (loading === true)
                 RegisterNewFish()
         },
-        [loading] // When this array is empty, you are observing initial component state
+        [loading]
     )
 
     useEffect(
@@ -66,7 +66,7 @@ export const Shop = () => {
                 setShowAdd(true);
             setLoadingAddModal(false)
         },
-        [loadingAddModal] // When this array is empty, you are observing initial component state
+        [loadingAddModal]
     )
 
     useEffect(
@@ -75,7 +75,7 @@ export const Shop = () => {
                 setShowDelete(true);
             setLoadingDeleteModal(false)
         },
-        [loadingDeleteModal] // When this array is empty, you are observing initial component state
+        [loadingDeleteModal]
     )
 
 
@@ -108,27 +108,27 @@ export const Shop = () => {
         setShowAdd(false);
         const localAquariumUser = localStorage.getItem("Aquarium_user")
         const fishUserObject = JSON.parse(localAquariumUser)
-    if (species && name) {
-        setFish({
-            userID: fishUserObject.id,
-            fishID: parseInt(species),
-            name: name,
-            love: 0
-        },
-            setLoading(true))
+        if (species && name) {
+            setFish({
+                userID: fishUserObject.id,
+                fishID: parseInt(species),
+                name: name,
+                love: 0
+            },
+                setLoading(true))
             setName()
             setSpecies()
-        successbloop()}
-            
-            else{
-                setAddSnackFail(true)
-                setName()
-                setSpecies()
-                failbloop()
-            }
+            successbloop()
+        }
+
+        else {
+            setAddSnackFail(true)
+            setName()
+            setSpecies()
+            failbloop()
+        }
     }
 
-    // Function to close Modal
     const openAdd = () => {
         setShowDelete(false);
         setLoadingAddModal(true);
@@ -173,7 +173,7 @@ export const Shop = () => {
                     setFishArray(fishArray)
                 })
         },
-        [] // When this array is empty, you are observing initial component state
+        []
     )
     useEffect(
         () => {
@@ -183,7 +183,7 @@ export const Shop = () => {
                     setuserFishArray(userFishArray)
                 })
         },
-        [] // When this array is empty, you are observing initial component state
+        []
     )
 
 
@@ -191,17 +191,18 @@ export const Shop = () => {
         fishArray.map(
             (fish) => {
                 const owned = userFishArray.filter(fish => fish.userID === fishUserObject.id)
-                if (owned.find(fishie => parseInt(fishie.fishID) === fish.id)){
+                if (owned.find(fishie => parseInt(fishie.fishID) === fish.id)) {
                     return <MenuItem value={fish.id} key={fish.id} disabled
-                    onChangeCapture={onChangeFishHandler}>{fish.species} (owned)</MenuItem>
+                        onChangeCapture={onChangeFishHandler}>{fish.species} (owned)</MenuItem>
                 }
-                else{
-                return (
-                    <MenuItem value={fish.id} key={fish.id}
-                        onChangeCapture={onChangeFishHandler}>{fish.species}</MenuItem>
+                else {
+                    return (
+                        <MenuItem value={fish.id} key={fish.id}
+                            onChangeCapture={onChangeFishHandler}>{fish.species}</MenuItem>
 
-                )
-            }}
+                    )
+                }
+            }
         )
     )
 
@@ -235,23 +236,24 @@ export const Shop = () => {
     const remove = () => {
         setShowDelete(false);
         if (deleted) {
-        return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish/${deleted}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
+            return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish/${deleted}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
             }
+            ).then(() => {
+                return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish`)
+                    .then(response => response.json())
+                    .then((userFishArray) => {
+                        setDeleted()
+                        setuserFishArray(userFishArray)
+                        setDeleteSnackSuccess(true)
+                        failbloop()
+                    })
+            })
         }
-        ).then(() => {
-            return fetch(`https://waterrarium-api-yr94n.ondigitalocean.app/userFish`)
-                .then(response => response.json())
-                .then((userFishArray) => {
-                    setDeleted()
-                    setuserFishArray(userFishArray)
-                    setDeleteSnackSuccess(true)
-                    failbloop()
-                })
-        })}
-        else{
+        else {
             setDeleteSnackFail(true)
             failbloop()
         }

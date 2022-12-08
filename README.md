@@ -7,7 +7,7 @@ Waterrarium is a Tamagotchi-like browser game where you own your own aquarium! C
 
 # Background
 
-Ths application was created out of a love for video games, especially ones made with pixel art. I wanted to make something fun while also utilizing many of the different things that libraries allow you to do in React. Additionally, I wanted to become versed in using CSS, including keyframes animations. It is my dream to one day become a solo developer, so I wanted to become comfortable integrating assets into a project.
+Ths application was created out of a love for video games, especially ones made with pixel art. I wanted to make something fun while also utilizing many of the different things that libraries allow you to do in React. Additionally, I wanted to become versed in using CSS, including keyframes animations. It is my dream to one day become a solo developer of a video game, so I wanted to become comfortable integrating assets into a project.
 
 # Website
 
